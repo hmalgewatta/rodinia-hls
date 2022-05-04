@@ -41,4 +41,10 @@ struct bench_args_t {
     float distance[NUM_PT_IN_SEARCHSPACE];
 };
 
+extern "C" void workload(
+	float inputQuery[NUM_FEATURE],
+	INTERFACE_WIDTH searchSpace[NUM_PT_IN_SEARCHSPACE*NUM_FEATURE/WIDTH_FACTOR],
+    INTERFACE_WIDTH distance[NUM_PT_IN_SEARCHSPACE/WIDTH_FACTOR]
+);
+
 #endif

@@ -25,11 +25,17 @@ help::
 	$(ECHO) ""
 
 # Compiler tools
-XILINX_SDX ?= /local-scratch/SDx/SDx/2019.1
+# XILINX_SDX ?= /local-scratch/SDx/SDx/2019.1
+# XILINX_XRT ?= /opt/xilinx/xrt
+# XILINX_SDK ?= $(XILINX_SDX)/../../SDK/2019.1
+# XILINX_VIVADO ?= /local-scratch/SDx/Vivado/2019.1
+# XILINX_VIVADO_HLS ?= $(XILINX_SDX)/Vivado_HLS
+XILINX_VITIS ?= /compas/opt/Xilinx/Vitis/2020.1
+XILINX_SDX ?= /compas/opt/Xilinx/Vitis/2020.1 
 XILINX_XRT ?= /opt/xilinx/xrt
-XILINX_SDK ?= $(XILINX_SDX)/../../SDK/2019.1
-XILINX_VIVADO ?= /local-scratch/SDx/Vivado/2019.1
-XILINX_VIVADO_HLS ?= $(XILINX_SDX)/Vivado_HLS
+XILINX_SDK ?= /compas/opt/Xilinx/SDK/2019.1 
+XILINX_VIVADO ?= /compas/opt/Xilinx/Vivado/2019.1 
+XILINX_VIVADO_HLS ?= /compas/opt/Xilinx/Vitis_HLS
 
 # Kernal Name
 APP=nw

@@ -6,7 +6,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <assert.h>
-
+#include "ap_int.h"
 
 #define SIM_TIME 64
 
@@ -17,7 +17,9 @@
 
 #define PARA_FACTOR 16
 
-
+#ifndef LARGE_BUS
+#define LARGE_BUS 512
+#endif
 
 /* maximum power density possible (say 300W for a 10mm x 10mm chip) */
 
@@ -50,5 +52,6 @@ struct bench_args_t {
     float power[GRID_ROWS * GRID_COLS];
 };
 
+extern "C" void workload(class ap_uint<LARGE_BUS> *result, class ap_uint<LARGE_BUS> *temp, class ap_uint<LARGE_BUS> *power);
 
 #endif

@@ -1,6 +1,27 @@
 #include "hotspot.h"
-#include "../../../common/mc.h"
 
+#ifndef LARGE_BUS
+#define LARGE_BUS 512
+#endif
+
+#ifndef SIZE_1
+#define SIZE_1 1
+#endif
+
+#ifndef SIZE_2
+#define SIZE_2 1
+#endif
+
+#ifndef SIZE_3
+#define SIZE_3 1
+#endif
+
+#define MARS_WIDE_BUS_TYPE ap_uint<LARGE_BUS>
+
+#include "ap_int.h"
+
+#include "../../../common/mars_wide_bus.h"
+// #define instant_size(access, type, size1, size2, size3) memcpy_wide_bus_##access##_##type##_4d_##size1##_##size2##_##size3
 extern "C"{
 float hotspot_stencil_core(float temp_top, float temp_left, float temp_right, float temp_bottom, float temp_center, float power_center, float Cap_1, float Rx_1, float Ry_1, float Rz_1) {
     #pragma HLS inline off
@@ -93,6 +114,7 @@ void buffer_store(int flag, int k, class ap_uint<LARGE_BUS> *result_dest, float 
     return;
 }
 
+//void workload(class ap_uint<LARGE_BUS> *result, class ap_uint<LARGE_BUS> *temp, class ap_uint<LARGE_BUS> *power)
 void workload(class ap_uint<LARGE_BUS> *result, class ap_uint<LARGE_BUS> *temp, class ap_uint<LARGE_BUS> *power)
 {
 

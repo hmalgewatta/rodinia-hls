@@ -7,7 +7,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <math.h>
-#include "../../../common/mc.h"
+//#include "../../../common/mc.h"
 
 #define FLT_MAX 3.40282347e+38
 
@@ -20,14 +20,20 @@ const int WIDTH_FACTOR = 16;
 
 const int NUM_TILES = NPOINTS/TILE_SIZE;
 
-// void workload(float  *feature, /* [npoints][nfeatures] */
-// 			  float  *clusters, /* [n_clusters][n_features] */
-// 			  int *membership);
+void workload(float  *feature, /* [npoints][nfeatures] */
+ 			  float  *clusters, /* [n_clusters][n_features] */
+ 			  int *membership);
 
 struct bench_args_t {
 	float FEATURE[NPOINTS*NFEATURES];
 	float CLUSTER[NCLUSTERS*NFEATURES];
 	int MEMBERSHIP[NPOINTS];
 };
+
+//struct bench_args_t {
+//	float *FEATURE;
+//	float *CLUSTER;
+//	int*MEMBERSHIP;
+//};
 
 #endif
